@@ -20,7 +20,9 @@
     <li class="list-group-item">
       <%= review.content %>
       <%= link_to "Remove",
-            %>
+          review_path(review),
+          method: :delete,
+          data: { confirm: "Are you sure?"}  %>
     </li>
   <% end %>
 </ul>

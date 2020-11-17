@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_restaurant
+  before_action :set_restaurant, except: :destroy
 
   def new
     @review = Review.new
@@ -16,7 +16,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    Review.find(params[:id]).destroy
+    @review = Review.find(params[:id])
+    @restaurant = @review.restaurant
+    @review.destroy
     redirect_to restaurant_path(@restaurant)
   end
 
