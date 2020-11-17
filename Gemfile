@@ -26,6 +26,8 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.4.2', require: false
 # Addings simple form
 gem 'simple_form'
+# Adding faker for seed file
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
